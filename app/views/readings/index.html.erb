@@ -1,0 +1,31 @@
+<h1>Readings for <%= @location.name %></h1>
+<div class = "row">
+  <table class = "table table-striped">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Weather</th>
+        <th>Water Temperature</th>
+        <th>pH</th>
+        <th>Conductivity</th>
+        <th>TDS</th>
+        <th>Observations</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @readings.each do |reading| %>
+    <tr>
+      <td><%= reading.date_observed %></td>
+      <td><%= reading.time_observed %></td>
+      <td><%= reading.weather %></td>
+      <td><%= reading.water_temp %></td>
+      <td><%= reading.ph %></td>
+      <td><%= reading.conductivity %></td>
+      <td><%= reading.TDS %></td>
+      <td><%= reading.observations %></td>
+    </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

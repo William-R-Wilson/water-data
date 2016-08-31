@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ph: 9.99
+  conductivity: 1
+  time: 
+  weather: MyText
+  water_temp: 1
+  TDS: MyString
+  integer: MyString
+  observations: MyText
+
+two:
+  ph: 9.99
+  conductivity: 1
+  time: 
+  weather: MyText
+  water_temp: 1
+  TDS: MyString
+  integer: MyString
+  observations: MyText

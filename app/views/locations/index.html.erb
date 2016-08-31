@@ -1,0 +1,25 @@
+<h1>All Locations</h1>
+<div class = "row">
+  <table class = "table table-striped">
+    <thead>
+      <tr>
+        <th>Unique Id</th>
+        <th>Location Name</th>
+        <th>Location Description</th>
+        <th>Readings</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @locations.each do |location| %>
+        <tr>
+          <td><%= location.id %></td>
+          <td><%= location.name %></td>
+          <td><%= location.description %></td>
+          <td><%= link_to location.readings.count, location_readings_path(location) %></td>
+          <td><%= link_to "Add a reading", new_location_reading_path(location) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

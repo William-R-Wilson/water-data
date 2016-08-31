@@ -1,0 +1,42 @@
+<div class = "col-xs-6 col-xs-offset-3">
+  <h1>Add a reading for <%= @location.name %></h1>
+  <%= form_for [@location, @reading] do |f| %>
+    <div class = "form-group">
+      <div>
+        <%= f.label :date_observed %>
+        <%= f.date_select :date_observed, class: "form-control" %>
+      </div>
+      <div>
+        <%= f.label :time_observed %>
+        <%= f.time_select :time_observed, class: "form-control" %>
+      </div>
+      <div>
+        <label>pH</label>
+        <%= f.text_field :ph, class: "form-control" %>
+      </div>
+      <div>
+        <%= f.label :conductivity %>
+        <%= f.text_field :conductivity, class: "form-control" %>
+      </div>
+      <div>
+        <%= f.label :water_temp %>
+        <%= f.text_field :water_temp, class: "form-control" %>
+      </div>
+      <div>
+        <%= f.label :TDS %>
+        <%= f.text_field :TDS, class: "form-control" %>
+      </div>
+      <div>
+        <%= f.label :observations %>
+        <%= f.text_area :observations, class: "form-control" %>
+      </div>
+      <div>
+        <%= f.label :weather %>
+        <%= f.text_area :weather, class: "form-control" %>
+      </div>
+      <div>
+        <%= f.submit "Add reading", class: "btn btn-success" %>
+      </div>
+    </div>
+  <% end %>
+</div>
