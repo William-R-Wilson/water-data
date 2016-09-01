@@ -6,19 +6,17 @@ function set_map(){
     zoom: 4,
     center: myLatLng
   });
-
-  var marker = new google.maps.Marker({
-    position: myLatLng,
-    map: map,
-    title: 'Here be knoxville'
-  });
-  var markerTwo = new google.maps.Marker({
-    position: {lat: 35.0000, lng: -83.0000},
-    map: map,
-    title: 'where the fuck is this?'
-  });
-
-
+  var loc = gon.locations
+  var l = gon.locations.length;
+  for (i = 0; i < l; i++) {
+    console.log(typeof(loc[i][1]))  ;
+    console.log(loc[i][2])
+    new google.maps.Marker({
+      position: {lat: Number(loc[i][1]), lng: Number(loc[i][2])},
+      map: map,
+      title: loc[i][0]
+    });
+  };
 
 }
 
