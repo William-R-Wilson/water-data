@@ -31,7 +31,7 @@ gem 'devise'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
-gem 'gon'
+gem 'gon' #allows variables to be passed to javascript from ruby
 
 # Use ActiveModel has_secure_password
 
