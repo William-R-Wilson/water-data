@@ -1,5 +1,7 @@
 class ReadingsController < ApplicationController
 
+    before_action :authenticate_user!, except: [:index]
+
   def new
     @location = Location.find(params[:location_id])
     @reading = Reading.new

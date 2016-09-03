@@ -9,7 +9,6 @@
   <script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAuBy0caNu5eU25w8-IvFx8RFtL2A1GwXQ"></script
 </head>
   <body>
-      <% if user_signed_in? %>
       <nav class = "navbar navbar-default">
         <div class = "container-fluid">
           <div class = "navbar-header">
@@ -24,7 +23,7 @@
           </div>
           <div class = "collapse navbar-collapse" id = "navbar-content">
             <ul class = "nav navbar-nav">
-              <li><%= link_to "Add Location", new_location_path %></li>
+              <li><%= link_to "Add Location", new_location_path if user_signed_in? %></li>
               <li><%= link_to "Map", map_path %></li>
             </ul>
             <ul class = "nav navbar-nav navbar-right">
@@ -37,12 +36,13 @@
                     <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
                   </ul>
                 </li>
-                <% end %>
+              <% else %>
+                <li><%= link_to "Sign in", new_user_session_path %></li>
+              <% end %>
             </ul>
           </div>
         </div>
       </nav>
-      <% end %>
       <div class = "container">
         <div>
           <% if notice %>
