@@ -26,6 +26,19 @@ function newLocationMap(){
         markers.push(marker);
       }
 
+      //function iconTypeForNewLocations(){
+      //  if $("#location_location_type").val("mine") {
+      //    return "assets/mine.png";
+      //  }
+      //  else if ($"#location_location_type").val("test") {
+      //    return "assets/Editing-Clipboard-icon.png";
+      //  }
+      //  else {
+      //    return "";
+      //  }
+      //}
+
+
       function clearMarkers() {
         l = markers.length;
         for (var i = 0; i < l; i++) {
@@ -35,7 +48,6 @@ function newLocationMap(){
       }
 
 }
-
 
     function newLocation(){
       newLocationMap();

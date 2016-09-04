@@ -4,11 +4,13 @@ class LocationsController < ApplicationController
 
   def new
     @location = Location.new
+    @types = [["Mine", "mine"], ["Test Site", "test"]]
   end
 
   def create
     @location = Location.new(location_params)
     @location.user_id = current_user.id
+
     if @location.save
       flash[:notice] = "location added!"
       redirect_to locations_path
@@ -32,7 +34,7 @@ class LocationsController < ApplicationController
   private
 
     def location_params
-      params.require(:location).permit(:name, :description, :lat, :long)
+      params.require(:location).permit(:name, :description, :lat, :long, :location_type)
     end
 
 end

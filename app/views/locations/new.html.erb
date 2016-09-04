@@ -11,6 +11,8 @@
         <%= f.text_field :lat, class: "form-control" %>
         <%= f.label "Longitude" %>
         <%= f.text_field :long, class: "form-control" %>
+        <%= f.label "Type of Site" %>
+        <%= f.select :location_type, @types, {}, class: "form-control" %>
         <%= render "shared/error_messages", object: f.object %>
         <%= f.submit "Add location", class: "btn btn-success" %>
       </div>
